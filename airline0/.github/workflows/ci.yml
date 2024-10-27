@@ -1,6 +1,8 @@
 name: Testing
 on: push
-
+push:
+    branches:
+      - main
 jobs:
   test_project:
     runs-on: ubuntu-latest
