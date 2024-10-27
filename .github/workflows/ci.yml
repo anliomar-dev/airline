@@ -3,12 +3,15 @@ name: Django CI
 on:
   push:
     branches: [ "main" ]
+    paths:
+      - airline0/**  # Exécutez le workflow uniquement si des fichiers sous airline0 changent
   pull_request:
     branches: [ "main" ]
+    paths:
+      - airline0/**  # Exécutez le workflow uniquement pour les PR qui affectent airline0
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 4
